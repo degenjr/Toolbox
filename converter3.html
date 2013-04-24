@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+
+<html>
+
+<!--This creates the tab title in browser.-->
+<title>
+	Mulch  
+</title>
+
+<head>
+
+<!--This creates the floating text with its specific parameters.-->
+<marquee behavior="alternate" style="border:GREEN 3px SOLID; font-family:Magneto;"><b>
+<FONT SIZE = +3 color="0000FF">Mulch Converter</FONT></b></marquee><BR>
+
+</head>
+
+<body>
+
+<center>
+
+<form Name="converter">
+
+<BR>
+
+<!--This creates the input field for the square footage.-->
+<font face="Comic Sans MS">Square Feet</font><span title="Please input whole or decimal numbers"><input type="text" onkeypress="return isNum(event)" style="background-color:Green; 
+color:White; font-weight:bold; text-align: center" font-size="8px" name="feet" 
+size="10" value="" onClick="this.value=''"></span>
+
+<BR>
+
+<!--This creates the dropdown menu for the different mulch application thicknesses.-->
+<font face="Comic Sans MS">Depth</font><select name="checker" style="background-color:Green; color:White;">
+<option value="">
+<option value="0.0104166">1/8in.
+<option value="0.020833">1/4in.
+<option value="0.041666">1/2in.
+<option value="0.08333">1in.
+<option value="0.1666">2in.
+<option value="0.25">3in.
+<option value="0.333">4in.
+</select>
+
+<BR>
+<BR>
+
+<!--This creates the conversion button.-->
+<input type="button" value="Convert" onclick="convertMulch();">
+
+<!--This creates the reset button.-->
+<input type="reset" value="Reset">
+
+<BR>
+<BR>
+
+<!--This creates a table which houses a number of different output fields.-->
+<table>
+
+<tr>
+<td><input type="text" style="background-color:Blue; color:White; font-weight:bold; 
+text-align: center" font-size="8px" ID="multiply" name="result" size="10" value=""></td>
+<td><font face="Comic Sans MS">2-cubic-foot bags or</font></td>
+</tr>
+
+<tr>
+<td><input type="text" style="background-color:Blue; color:White; font-weight:bold; 
+text-align: center" font-size="8px" ID="multiply2" name="result" size="10" value=""></td>
+<td><font face="Comic Sans MS">3-cubic-foot bags or</font></td>
+</tr>
+
+<tr>
+<td><input type="text" style="background-color:Blue; color:White; font-weight:bold; 
+text-align: center" font-size="8px" ID="multiply3" name="result" size="10" value=""></td>
+<td><font face="Comic Sans MS">cubic feet or</font></td>
+</tr>
+
+<tr>
+<td><input type="text" style="background-color:Blue; color:White; font-weight:bold; 
+text-align: center" font-size="8px" ID="multiply4" name="result" size="10" value=""></td>
+<td><font face="Comic Sans MS">cubic yards or</font></td>
+</tr>
+
+<tr>
+<td><input type="text" style="background-color:Blue; color:White; font-weight:bold; 
+text-align: center" font-size="8px" ID="multiply5" name="result" size="10" value=""></td>
+<td><font face="Comic Sans MS">pickup truck loads (midsize)</font></td>
+</tr>
+
+</table>
+
+</form>
+
+<BR>
+
+<!--This creates the dropdown menu that allows the user to view the price of mulch at different retail establishments.-->
+Price Checker <select name="checker">
+<option value="">
+<option value="http://www.homedepot.com/h_d1/N-5yc1vZbx4a/h_d2/Navigation?langId=-1&storeId=10051&catalogId=10053">The Home Depot
+<option value="http://www.lowes.com/Garden-Center/Bagged-Mulch-Rock-Soil/_/N-1z0yzkw/pl?Ns=p_product_qty_sales_dollar|1#!">Lowes
+<option value="http://www.southernstates.com/catalog/c-1818-mulch.aspx">Southern States
+</select>
+
+<!--This creates the button that sends the user to the selected location from the dropdown menu above.-->
+<input type="button" value="Check Mulch Prices" align="center" 
+onClick="window.open(checker.value,'newtab')">
+
+<BR>
+<BR>
+
+<!--This creates the division in which a static image is inserted.-->
+<div style="position: center;">
+	<img src="mulch2.jpg">
+</div>
+
+</center>
+
+<BR>
+
+<!--This section creates a tips secion using an unordered list.-->
+<center>
+<font face="Georgia"><b>Tips</b></font>
+</center>
+
+<ul style="font-family:Comic Sans MS">
+<li> Make sure to purchase the type of mulch that meets your needs. For example, purchase a less coarse mulch for playground
+	 areas.
+	 <BR>
+	 <BR>
+<li> Make sure to apply the proper amount of mulch suitable for your project.  For example, to prevent weed growth in garden or 
+	 raised bed areas you should apply enough so the depth of the mulch is two to four inches.
+	 <BR>
+	 <BR>
+<li> Apply a new layer of organic mulch every few years to make up for break down and dispersal.
+	 <BR>
+	 <BR>
+<li> Use proper equipment for transporting and applying mulch.
+	 <BR>
+	 <BR>
+</ul>
+
+<!--This section creates a weatherbug widget for the user to interact with.-->
+<center>
+
+<link rel="stylesheet" type="text/css" media="screen" href="http://img.weather.weatherbug.com/Style/stickers/v2/Stickers_728x90.css" /> 
+		<div class="wXbody">
+		<div class="logo"><a href="http://weather.weatherbug.com/default.html" target="_blank" onclick="Javascript:this.href='http://weather.weatherbug.com/VA/Harrisonburg-weather.html?zcode=z5545&units=0'"><img src="http://img.weather.weatherbug.com/images/stickers/v2/728x90/wxBug-logo.jpg" border="0" alt="WeatherBug" /></a></div>
+		<div class="local"><a href="http://weather.weatherbug.com/default.html" target="_blank" onclick="Javascript:this.href='http://weather.weatherbug.com/VA/Harrisonburg-weather.html?zcode=z5545&units=0'"><img src="http://img.weather.weatherbug.com/images/stickers/v2/English_ViewLocal_102x16.png" border="0" alt="WeatherBug" /></a></div>
+		<iframe id="WeatherBugSticker_728x90_v2" src="http://weather.weatherbug.com/desktop-weather/web-widgets/getSticker.html?ZipCode=22807&ZCode=z5545&Size=728x90&StationID=HRRJM&units=0&Version=2&lang_id=en-us" width="400" height="76" class="frame" frameborder="0" scrolling="no" allowtransparency="yes"></iframe>
+		<div class="wXlinks">
+		<span class="link"><a href="http://weather.weatherbug.com/weather-forecast.html" target="_blank" onclick="Javascript:this.href='http://weather.weatherbug.com/VA/Harrisonburg-weather/local-forecast/7-day-forecast.html?zcode=z5545&units=0'">Forecast</a></span>
+		<span class="link"><a href="http://weather.weatherbug.com/doppler-radar.html" target="_blank" onclick="Javascript:this.href='http://weather.weatherbug.com/VA/Harrisonburg-weather/local-radar/doppler-radar.html?zcode=z5545&units=0'">Radar</a></span>
+		<span class="link"><a href="http://weather.weatherbug.com/weather-photos/photo-gallery.html" target="_blank" onclick="Javascript:this.href='http://weather.weatherbug.com/weather-photos/photo-gallery.html?zcode=z5545&units=0&zip=22807'">Photos</a></span>
+		</div>
+		<div class="wXlinks2">
+		<span class="link"><a href="http://weather.weatherbug.com/weather-cams.html" target="_blank" onclick="Javascript:this.href='http://weather.weatherbug.com/VA/Harrisonburg-weather/weather-cams/local-cams.html?zcode=z5545&units=0'">Cameras</a></span>
+		<span class="link"><a href="http://weather.weatherbug.com/weather-news/weather-reports.html" target="_blank" onclick="Javascript:this.href='http://weather.weatherbug.com/weather-news/weather-reports.html?zcode=z5545&units=0&zip=22807'">News</a></span>
+		<span class="link"><a href="http://weather.weatherbug.com/travel/home.html" target="_blank" onclick="Javascript:this.href='http://weather.weatherbug.com/travel/home.html?zcode=z5545&units=0&zip=22807'">Travel</a></span>
+		</div>
+		</div>
+		
+</center>
+
+</body>
+
+<script language="JavaScript">
+/**
+  * This function takes in two user inputs to calculate how much mulch will be needed per application.
+ */
+function convertMulch()
+{
+	var feet = document.converter.feet.value; //Gets the number of square feet. 
+	var amount = document.converter.checker.value; //Gets the depth of mulch desired. 
+	var cubicFeet; //Stores the final conversion value for cubic feet.
+	var cubicYard; //Stores the final conversion value for cubic yard.
+	var twoCub; //Stores the final conversion value for a two cubic bag.
+	var threeCub; //Stores the final conversion value for a three cubic bag.
+	var truckLoad; //Stores the final conversion value for the equivalency of a truck load.
+	
+	if(feet == "" || amount == "") //Checks to make sure the two input fields are not blank.
+	{
+		alert("The input field was left blank. Please enter a value.")
+	}
+	else if(feet < 0) //Checks to see if the numerical input field is less than 0.
+	{
+		alert("The value you entered is less than zero. Please enter a value that is greater than or equal to zero.")
+	}
+	else //If all checks out, the conversions takes place.
+	{
+		cubicFeet = Math.ceil(parseFloat(amount) * parseFloat(feet));
+		cubicYard = Math.round(10 * parseFloat(amount) * parseFloat(feet) / 27) / 10;
+		twoCub = Math.ceil(parseFloat(cubicFeet) / 2);
+		threeCub = Math.ceil(parseFloat(cubicFeet) / 3);
+		truckLoad = Math.ceil(parseFloat(cubicYard) / 1.5);
+	}
+	
+	//Spits the resulting conversions back into the output fields.
+	document.getElementById('multiply').value = twoCub;
+	document.getElementById('multiply2').value = threeCub;
+	document.getElementById('multiply3').value = cubicFeet;
+	document.getElementById('multiply4').value = cubicYard;
+	document.getElementById('multiply5').value = truckLoad;
+}
+
+/**
+ * This function prevents a user from inputing non-alphabetic values into the text fields.
+ */
+function isNum(evt)
+{
+	var charCode = (evt.which) ? evt.which : event.keyCode; //Takes in a user's input in terms of the unicode associated with said input.
+	
+	if(charCode != 46 && charCode > 31 &&(charCode < 45 || charCode > 57)) //Establishes an unicode range.  This range only allows numerical values to be entered.
+	{
+		return false; //If an alphabetical character is pressed, the function returns false thus blocking the user from entering said character.
+	}
+	else
+		return true; //If a numerical character is pressed, it is passed through for the program to manipulate.
+}
+</script>
+
+<!--A huge thank you to stackoverflow.com, w3schools.com, and htmlgoodies.com for the help they provided in the 
+  --inception and creation of this piece of our code.
+  -->
+
+
+</html>

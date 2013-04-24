@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+
+<html>
+
+<!--This creates the tab title in browser.-->
+<title>
+	Fertilizer
+</title>
+
+<head>
+
+<!--This creates the floating text with its specific parameters.-->
+<marquee behavior="alternate" style="border:GREEN 3px SOLID; font-family:Magneto;"><b>
+<FONT SIZE = +3 color="0000FF">Fertilizer Converter</FONT></b></marquee><BR>
+
+</head>
+
+<body>
+
+<center>
+
+<form Name="converter">
+
+For the purposes of this application, the amount of fertilizer needed for a given amount of square footage is calculated
+per 1000 square feet.  Only the nitrogen concentration is taken into account in this case although there are many other 
+chemicals and nutrients that are mixed together to create a "complete" fertilizer.
+
+<BR>
+<BR>
+
+<!--This creates the input field for the square footage.-->
+<font face="Comic Sans MS">Square Feet</font><span title="Please input whole or decimal values"><input type="text" onkeypress="return isNum(event)" style="background-color:Green; 
+color:White; font-weight:bold; text-align: center" font-size="8px" name="feet" 
+size="10" value="" onClick="this.value=''"></span>
+
+<BR>
+
+<!--This creates the input field for the pounds of nitrogen needed per 1000 square feet.-->
+<font face="Comic Sans MS">Lbs of Nitrogen/1000 Square Feet</font><span title="Please input whole or decimal values"><input type="text" onkeypress="return isNum(event)" style="background-color:Green; 
+color:White; font-weight:bold; text-align: center" font-size="8px" name="amount" 
+size="10" value="" onClick="this.value=''"></span> 
+
+<BR>
+
+<!--This creates the dropdown menu for the different fertilizer NPK ratios .-->
+<font face="Comic Sans MS">Nitrogen-Phosphorous-Potassium Ratio</font><select name="checker" style="background-color:Green; color:White;">
+<option value="">
+<option value="0.05">5-10-15
+<option value="0.10">10-10-10
+<option value="0.16">16-4-8
+</select>
+
+<BR>
+<BR>
+
+<!--This creates the conversion button.-->
+<input type="button" value="Convert" onclick="convertFertilizer();">
+
+<!--This creates the reset button.-->
+<input type="reset" value="Reset">
+
+<BR>
+<BR>
+
+<!--This creates the output field for the amount of fertilizer needed.-->
+<input type="text" style="background-color:Blue; color:White; font-weight:bold; 
+text-align: center" font-size="8px" ID="multiply" name="result" size="10" value=""><font face="Comic Sans MS">Lbs. of Fertilizer Needed</font>
+<BR>
+
+</form>
+
+<BR>
+
+<form Name="converter2">
+
+<!--This creates the dropdown menu that allows the user to view the price of fertilizer at different retail establishments.-->
+Price Checker <select name="checker">
+<option value="">
+<option value="http://www.homedepot.com/h_d1/N-5yc1vZbx6b/h_d2/Navigation?langId=-1&storeId=10051&catalogId=10053">The Home Depot
+<option value="http://www.lowes.com/Lawn-Care-Landscaping/Fertilizer-Weed-Control/Lawn-Fertilizer/_/N-1z0yhvi/pl#!">Lowes
+<option value="http://www.southernstates.com/catalog/c-1759-fertilizers.aspx">Southern States
+</select>
+
+<!--This creates the button that sends the user to the selected location from the dropdown menu above.-->
+<input type="button" value="Check Fertilizer Prices" align="center" 
+onClick="window.open(checker.value,'newtab')">
+
+<BR>
+<BR>
+
+</form>
+
+<!--This creates the division in which a static image is inserted.-->
+<div style="position: center;">
+	<img src="fertilizer.jpg">
+</div>
+
+</center>
+
+<BR>
+
+<!--This section creates a tips secion using an unordered list.-->
+<center>
+<font face="Georgia"><b>Tips</b></font>
+</center>
+
+<ul style="font-family:Comic Sans MS">
+<li> Apply your fertilizer after rainy periods so that it can be easily absorbed by the grass and also not
+	 burn it up.
+	 <BR>
+	 <BR>
+<li> Depending on your location, use the correct amount of fertilizer for different seasons.  For example, southern
+	 climates require more fertilizer in the early to late spring time period compared to that of nothern climates
+	 which require more fertilizer in the fall growing season. 
+	 <BR>
+	 <BR>
+<li> Be careful not to use too much nitrogen.  Excess nitrogen can burn up your lawn if it is not absorbed quickly
+	 and it could lead to water table contamination.
+	 <BR>
+	 <BR>
+<li> Make sure to follow all manufacture instructions when it comes to applying the fertilizer to your lawn.
+	 <BR>
+	 <BR>
+<li> Do not allow people (especially children) or pets to walk through a freshly fertilized lawn.  The chemicals in fertilizers
+	 are extremely toxic to pets and can cause severe illness in children if injested. 
+</ul>
+
+<center>
+
+<link rel="stylesheet" type="text/css" media="screen" href="http://img.weather.weatherbug.com/Style/stickers/v2/Stickers_728x90.css" /> 
+		<div class="wXbody">
+		<div class="logo"><a href="http://weather.weatherbug.com/default.html" target="_blank" onclick="Javascript:this.href='http://weather.weatherbug.com/VA/Harrisonburg-weather.html?zcode=z5545&units=0'"><img src="http://img.weather.weatherbug.com/images/stickers/v2/728x90/wxBug-logo.jpg" border="0" alt="WeatherBug" /></a></div>
+		<div class="local"><a href="http://weather.weatherbug.com/default.html" target="_blank" onclick="Javascript:this.href='http://weather.weatherbug.com/VA/Harrisonburg-weather.html?zcode=z5545&units=0'"><img src="http://img.weather.weatherbug.com/images/stickers/v2/English_ViewLocal_102x16.png" border="0" alt="WeatherBug" /></a></div>
+		<iframe id="WeatherBugSticker_728x90_v2" src="http://weather.weatherbug.com/desktop-weather/web-widgets/getSticker.html?ZipCode=22807&ZCode=z5545&Size=728x90&StationID=HRRJM&units=0&Version=2&lang_id=en-us" width="400" height="76" class="frame" frameborder="0" scrolling="no" allowtransparency="yes"></iframe>
+		<div class="wXlinks">
+		<span class="link"><a href="http://weather.weatherbug.com/weather-forecast.html" target="_blank" onclick="Javascript:this.href='http://weather.weatherbug.com/VA/Harrisonburg-weather/local-forecast/7-day-forecast.html?zcode=z5545&units=0'">Forecast</a></span>
+		<span class="link"><a href="http://weather.weatherbug.com/doppler-radar.html" target="_blank" onclick="Javascript:this.href='http://weather.weatherbug.com/VA/Harrisonburg-weather/local-radar/doppler-radar.html?zcode=z5545&units=0'">Radar</a></span>
+		<span class="link"><a href="http://weather.weatherbug.com/weather-photos/photo-gallery.html" target="_blank" onclick="Javascript:this.href='http://weather.weatherbug.com/weather-photos/photo-gallery.html?zcode=z5545&units=0&zip=22807'">Photos</a></span>
+		</div>
+		<div class="wXlinks2">
+		<span class="link"><a href="http://weather.weatherbug.com/weather-cams.html" target="_blank" onclick="Javascript:this.href='http://weather.weatherbug.com/VA/Harrisonburg-weather/weather-cams/local-cams.html?zcode=z5545&units=0'">Cameras</a></span>
+		<span class="link"><a href="http://weather.weatherbug.com/weather-news/weather-reports.html" target="_blank" onclick="Javascript:this.href='http://weather.weatherbug.com/weather-news/weather-reports.html?zcode=z5545&units=0&zip=22807'">News</a></span>
+		<span class="link"><a href="http://weather.weatherbug.com/travel/home.html" target="_blank" onclick="Javascript:this.href='http://weather.weatherbug.com/travel/home.html?zcode=z5545&units=0&zip=22807'">Travel</a></span>
+		</div>
+		</div>
+</center>
+
+</body>
+
+<script language="JavaScript">
+/**
+ * This function takes in three user inputs to calculate how much fertilizer will be needed per application.
+ */
+function convertFertilizer()
+{
+	var feet = document.converter.feet.value; //Gets the number of square feet.
+	var amount = document.converter.amount.value; //Gets the amount of nitrogen per 1000 square feet.
+	var conversion = document.converter.checker.value; //Gets the nitrogen-phosphorous-potassium ratio (NPK).
+	var value; //Stores the resulting value of dividing the amount of nitrogen needed by the percentage of nitrogen found in the NPK ratio. 
+	var convertToPounds; //Stores the final conversion value.
+	
+	if(feet == "" || conversion == "" || amount == "") //Checks to make sure the three input fields are not blank.
+	{
+		alert("The input field was left blank. Please enter a value.")
+	}
+	else if(feet < 0 || amount < 0) //Checks to see if any of the two input fields are less than 0.
+	{
+		alert("The value you entered is less than zero. Please enter a value that is greater than or equal to zero.")
+	}
+	else //If all checks out, the conversion takes place.
+	{
+		value = (parseFloat(amount) / parseFloat(conversion)).toFixed(2);
+		convertToPounds = (parseFloat(feet / 1000) * parseFloat(value)).toFixed(2);
+	}
+	
+	//Spits the resulting conversion back into the output field.
+	document.getElementById('multiply').value = convertToPounds;
+}
+
+/**
+ * This function prevents a user from inputing non-alphabetic values into the text fields.
+ */
+function isNum(evt)
+{
+	var charCode = (evt.which) ? evt.which : event.keyCode; //Takes in a user's input in terms of the unicode associated with said input.
+	
+	if(charCode != 46 && charCode > 31 &&(charCode < 45 || charCode > 57)) //Establishes an unicode range.  This range only allows numerical values to be entered.
+	{
+		return false; //If an alphabetical character is pressed, the function returns false thus blocking the user from entering said character.
+	}
+	else
+		return true; //If a numerical character is pressed, it is passed through for the program to manipulate.
+}
+</script>
+
+<!--A huge thank you to stackoverflow.com, w3schools.com, and htmlgoodies.com for the help they provided in the 
+  --inception and creation of this piece of our code.  Also, we would like to thank weatherbug.com for supplying 
+  --us with the code for the weatherbug widget.
+  -->
+
+</html>

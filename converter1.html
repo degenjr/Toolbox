@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+
+<html>
+
+<!--This creates the tab title in browser.-->
+<title>
+	Fuel
+</title>
+
+<head>
+
+<!--This creates the floating text with its specific parameters.-->
+<marquee behavior="alternate" style="border:GREEN 3px SOLID; font-family:Magneto;"><b>
+<FONT SIZE = +3 color="0000FF">Fuel Ratio Converter</FONT></b></marquee><BR>
+
+</head>
+
+<body>
+
+<center>
+
+<BR>
+
+<form Name="converter">
+
+<!--This creates the input field for the number of gallons of gasoline.-->
+<font face="Comic Sans MS">Gallons of Gas</font><span title="Please input whole or decimal values"><input type="text" onkeypress="return isNum(event)" style="background-color:Green; 
+color:White; font-weight:bold; text-align: center" font-size="8px" name="Gas" ID="Gas" 
+size="10" value="" onClick="this.value=''"></span>
+
+<BR>
+
+<!--This creates the dropdown menu for the different fuel ratios.-->
+<font face="Comic Sans MS">Fuel Ratio</font><select name="ratio" style="background-color:Green; color:White;">
+<option value="">
+<option value="16">16:1
+<option value="24">24:1
+<option value="32">32:1
+<option value="40">40:1
+<option value="50">50:1
+</select> 
+
+<BR>
+<BR>
+
+<!--This creates the conversion button.-->
+<input type="button" value="Convert" onclick="convertGas();">
+
+<!--This creates the reset button.-->
+<input type="reset" value="Reset">
+
+<BR>
+<BR>
+
+<!--This creates the output field for the amount of oil needed.-->
+<input type="text" style="background-color:Blue; color:White; font-weight:bold; 
+text-align: center" font-size="8px" ID="multiply" name="result" size="10" value=""><font face="Comic Sans MS"> Fluid Ounces of Oil</font>
+
+<BR>
+<BR>
+<BR>
+<BR>
+
+</form>
+
+<!--This creates the division in which a static image is inserted.-->
+<div style="position: center; width:50%">
+	<img src="GasNozzle1.jpg">
+</div>
+
+</center>
+
+<!--This section creates a tips secion using an unordered list.-->
+<center>
+<font face="Georgia"><b>Tips</b></font>
+</center>
+
+<ul style="font-family:Comic Sans MS;">
+<li> Make sure you have the proper octane level of gas.  Having an octane level below or above
+	 your engine's specifications may cause it to flood.
+	 <BR>
+	 <BR>
+<li> Don't mix the gas and oil together within the confines of the gas tank of your piece of equipment.
+     This could create future problems in your equipment's carburetor, fuel lines, and the like.
+	 <BR>
+	 <BR>
+<li> Make sure your gas is fresh.  If it happens to be over 30 days old, use a stabilizer to help prevent
+	 engine malfunctions.
+	 
+</ul>
+
+<center>
+
+<!--This section creates a price checker widget courtesy of zfacts.com.-->
+<a title='gas price history' name="7784" rel="height = 220; width = 300;" href="http://zfacts.com/p/35.html" id="zf10_1">gas prices history</a>
+
+<script type="text/javascript">(function() { var s = document.createElement('script');
+s.async = true; s.src = "http://zfacts.com/giz/G10/ngas.php?id=1";
+var x = document.getElementsByTagName('script')[0];
+x.parentNode.insertBefore(s, x); })();</script>
+
+</center>
+
+</body>
+
+<script language="JavaScript">
+/**
+ * This function takes in two user inputs to calculate how much oil is needed.
+ */
+function convertGas()
+{
+	var fl = 128; //Establishes a final value for the conversion from gallons to fluid ounces.
+	var Gas = document.converter.Gas.value; //Gets the number of gallons of gasoline.
+	var ratio = document.converter.ratio.value; //Gets the fuel ratio value.
+	var convertToOil; //Stores the finished conversion value.
+	
+	if(Gas == "" || ratio == "") //Checks to make sure the two input fields are not blank.
+	{
+		alert("The input field was left blank. Please enter a value.")
+	}
+	else if(Gas < 0) //Checks to see if the numerical input field is less than 0.
+	{
+		alert("The value you entered is less than zero. Please enter a value that is greater than or equal to zero.")
+	}
+	else //If all checks out, the conversion takes place.
+	{
+		convertToOil = ((parseFloat(Gas) * fl) / ratio).toFixed(2);
+	}
+	
+	//Spits the resulting conversion back into the output field.
+	document.getElementById('multiply').value = convertToOil;
+}
+
+/**
+ * This function prevents a user from inputing non-alphabetic values into the text fields.
+ */
+function isNum(evt)
+{
+	var charCode = (evt.which) ? evt.which : event.keyCode; //Takes in a user's input in terms of the unicode associated with said input.
+	
+	if(charCode != 46 && charCode > 31 &&(charCode < 45 || charCode > 57)) //Establishes an unicode range.  This range only allows numerical values to be entered.
+	{
+		return false; //If an alphabetical character is pressed, the function returns false thus blocking the user from entering said character.
+	}
+	else
+		return true; //If a numerical character is pressed, it is passed through for the program to manipulate.
+}
+</script>
+
+<!--A huge thank you to stackoverflow.com, w3schools.com, and htmlgoodies.com for the help they provided in the 
+  --inception and creation of this piece of our code.  Also, we would like to thank zfacts.com for the gas price checker
+  --checker found within this page.
+  -->
+
+</html>
